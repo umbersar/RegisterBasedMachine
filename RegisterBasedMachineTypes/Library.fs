@@ -18,6 +18,8 @@ module Types =
     type AddObj = {aRegister:Register; bRegister:Register; destinationRegister:Register}
     type SubObj = {aRegister:Register; bRegister:Register; destinationRegister:Register}
     type StoreObj = {srcRegister:Register; baseSlotRegister:Register; slot_offset:int}
+    type BZObj = {conditionRegister:Register; offset:int}//Branch on condition by skipping specified number of instructions
+    type DECObj =  {aRegister:Register;}//Decrement a register value by 1
 
     type Instruction =
         //| CONST of int * Register
@@ -26,5 +28,7 @@ module Types =
         | ADD of AddObj
         | SUB of SubObj
         | STORE of StoreObj
+        | BZ of BZObj
+        | DEC of DECObj
         | HALT
 

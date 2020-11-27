@@ -9,7 +9,7 @@ namespace RegisterBasedMachine {
     public class Machine {
         //total of 9 registers with one being the program counter. Register R0 is hardwired to always contains the value 0 which is the base address of our memory block. Register R7 is initialized 
         //to the highest valid memory address. A special register PC holds the index of the next instruction that will execute.
-       //All the registers can store int values. Those values can either be intermediary values of a calculation or the slot index into memory address space. But R0, R7 and PC are special that they can not only values to 
+        //All the registers can store int values. Those values can either be intermediary values of a calculation or the slot index into memory address space. But R0, R7 and PC are special that they can not only values to 
         Dictionary<Register, int> Registers;
         private Memory memory;
 
@@ -54,6 +54,13 @@ namespace RegisterBasedMachine {
                 case Instruction.STORE s:
                     int store_slot_index = this.Registers[s.Item.baseSlotRegister] + s.Item.slot_offset;
                     this.memory.SetValue(this.Registers[s.Item.srcRegister], store_slot_index);
+                    break;
+                case Instruction.BZ bz:
+                    if (this.Registers[bz.Item.conditionRegister] == 0)
+                        this.Registers[Register.PC] += bz.Item.offset;
+                    break;
+                case Instruction.DEC dec:
+                    this.Registers[dec.Item.aRegister] -= 1;
                     break;
                 case Instruction h when h.IsHALT:
                     this.IsRunning = false;
