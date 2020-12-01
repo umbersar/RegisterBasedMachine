@@ -9,6 +9,10 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RegisterBasedMachineTypes",
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RegisterBasedMachineTests", "RegisterBasedMachineTests\RegisterBasedMachineTests.fsproj", "{BCC9AB57-66FE-4224-8268-E3852BD9156D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "icemanind_B32Machine", "icemanind_B32Machine", "{F0C35521-0CDD-440B-945D-B729FAEB21AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B32Assembler", "B32Assembler\B32Assembler.csproj", "{EBD31EAA-8668-426A-9632-4637D27D0A6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{BCC9AB57-66FE-4224-8268-E3852BD9156D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCC9AB57-66FE-4224-8268-E3852BD9156D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCC9AB57-66FE-4224-8268-E3852BD9156D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBD31EAA-8668-426A-9632-4637D27D0A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD31EAA-8668-426A-9632-4637D27D0A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD31EAA-8668-426A-9632-4637D27D0A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD31EAA-8668-426A-9632-4637D27D0A6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EBD31EAA-8668-426A-9632-4637D27D0A6A} = {F0C35521-0CDD-440B-945D-B729FAEB21AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D39581E1-3418-4933-9291-D27E04D7294A}
